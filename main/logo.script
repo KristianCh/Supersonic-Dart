@@ -1,0 +1,43 @@
+local acc = vmath.vector3(0, 0, 0)
+
+function clamp(x, min, max)
+	if x < min then x = min elseif x > max then x = max end
+	return x
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.calibrate_y = 0
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	if action.acc_x and action.acc_y and action.acc_z then
+		acc = vmath.vector3(action.acc_x , action.acc_y, 0)
+		local pos = go.get_position()
+		label.set_text("#label", "acc_x:" .. acc.x .. "\nacc_y:" .. acc.y .. "\nacc_z:" .. acc.z)
+		go.set_position(vmath.vector3(clamp(pos.x + 2 * acc.x, 64, 296), clamp(pos.y + acc.y - self.calibrate_y, 64, 676), 0))
+	end
+	if action_id == hash("multi-touch") then
+		self.calibrate_y = acc.y
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

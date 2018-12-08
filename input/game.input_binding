@@ -1,0 +1,4 @@
+touch_trigger {
+  input: TOUCH_MULTI
+  action: "multi-touch"
+}
