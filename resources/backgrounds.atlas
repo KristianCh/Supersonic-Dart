@@ -1,0 +1,6 @@
+images {
+  image: "/resources/images/ground_placeholder.jpg"
+}
+margin: 10
+extrude_borders: 0
+inner_padding: 10
