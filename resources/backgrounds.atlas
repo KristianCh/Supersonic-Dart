@@ -1,6 +1,9 @@
 images {
   image: "/resources/images/ground_placeholder.jpg"
 }
+images {
+  image: "/resources/images/background_1.png"
+}
 margin: 10
 extrude_borders: 0
 inner_padding: 10

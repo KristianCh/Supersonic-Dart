@@ -1,6 +1,9 @@
 images {
   image: "/resources/images/dart_1.png"
 }
+images {
+  image: "/resources/images/fire_1.png"
+}
 margin: 5
 extrude_borders: 0
 inner_padding: 10

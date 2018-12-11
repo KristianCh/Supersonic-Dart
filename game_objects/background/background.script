@@ -1,0 +1,12 @@
+function init(self)
+	go.animate("#sprite", "anim.x", go.PLAYBACK_LOOP_PINGPONG, 2 * math.pi, go.EASING_LINEAR, 10)
+end
+
+function update(self, dt)
+	local pos = go.get_position()
+	pos.y = pos.y - go.get("/game/dart#dart", "speed")
+	if pos.y < -750/2 then 
+		pos.y = 640 + 750/2
+	end
+	go.set_position(pos)
+end
