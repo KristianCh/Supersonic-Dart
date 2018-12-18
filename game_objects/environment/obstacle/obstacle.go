@@ -1,6 +1,6 @@
 components {
-  id: "dart"
-  component: "/game_objects/dart/dart.script"
+  id: "obstacle"
+  component: "/game_objects/environment/obstacle/obstacle.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,10 +14,10 @@ components {
   }
 }
 embedded_components {
-  id: "dart_sprite"
+  id: "sprite"
   type: "sprite"
-  data: "tile_set: \"/resources/darts.atlas\"\n"
-  "default_animation: \"dart_1\"\n"
+  data: "tile_set: \"/resources/environment.atlas\"\n"
+  "default_animation: \"crate\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
@@ -34,26 +34,6 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "fire_sprite"
-  type: "sprite"
-  data: "tile_set: \"/resources/darts.atlas\"\n"
-  "default_animation: \"fire_1\"\n"
-  "material: \"/resources/materials/fire.material\"\n"
-  "blend_mode: BLEND_MODE_ALPHA\n"
-  ""
-  position {
-    x: 0.0
-    y: -29.0
-    z: -1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
   id: "co"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
@@ -61,14 +41,14 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"dart\"\n"
-  "mask: \"environment\"\n"
+  "group: \"environment\"\n"
+  "mask: \"dart\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
   "      x: 0.0\n"
-  "      y: -15.0\n"
+  "      y: 0.0\n"
   "      z: 0.0\n"
   "    }\n"
   "    rotation {\n"
@@ -80,27 +60,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  shapes {\n"
-  "    shape_type: TYPE_BOX\n"
-  "    position {\n"
-  "      x: 0.0\n"
-  "      y: 13.0\n"
-  "      z: 0.0\n"
-  "    }\n"
-  "    rotation {\n"
-  "      x: 0.0\n"
-  "      y: 0.0\n"
-  "      z: 0.0\n"
-  "      w: 1.0\n"
-  "    }\n"
-  "    index: 3\n"
-  "    count: 3\n"
-  "  }\n"
   "  data: 20.0\n"
-  "  data: 12.5\n"
-  "  data: 10.0\n"
-  "  data: 10.0\n"
-  "  data: 15.0\n"
+  "  data: 20.0\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"

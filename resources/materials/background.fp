@@ -11,9 +11,9 @@ void main()
 
 	vec2 uv0 = var_texcoord0.xy;
 
-	shaded.x = 0.5 + sin(2.0 * uv0.x * dt);
-	shaded.y = 0.5 + sin(uv0.y * dt * 4.0);
-	shaded.z = 0.5 + sin((uv0.x + uv0.y) * dt * 8.0);
+	shaded.x = 0.5 + cos((uv0.x - 0.5) * dt) * 0.3;
+	shaded.y = 0.5 + sin((uv0.x - 0.5) * dt) * 0.3;
+	shaded.z = 0.5 + atan((uv0.x - 0.5) * dt) * cos(uv0.x * dt) * 0.3;
 
 	lowp vec4 tint_pm = vec4(shaded.xyz * shaded.w, shaded.w);
 	gl_FragColor = texture2D(DIFFUSE_TEXTURE, uv0.xy) * tint_pm;

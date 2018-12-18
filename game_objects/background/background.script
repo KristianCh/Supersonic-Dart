@@ -5,8 +5,8 @@ end
 function update(self, dt)
 	local pos = go.get_position()
 	pos.y = pos.y - go.get("/game/dart#dart", "speed")
-	if pos.y < -750/2 then 
-		pos.y = 640 + 750/2
+	if pos.y < -470 then 
+		pos.y = 1110
 	end
 	go.set_position(pos)
 end
